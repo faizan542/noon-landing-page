@@ -3,14 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-slideshow-image/dist/styles.css'
 import { Zoom } from 'react-slideshow-image';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import Product from './home/product';
 
 
 
@@ -39,75 +32,6 @@ const Slideshow = () => {
 
 
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-});
-
-const MediaCard = () => {
-  const classes = useStyles();
-  return (
-    <component>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://z.nooncdn.com/products/tr:n-t_240/v1610784898/N43748990A_1.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            U-HOOME Push Pop
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Bubble Fidget Sensor
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          AED 8.00
-        </Button>
-        <Button size="small" color="primary">
-        Arrives
-        </Button>
-      </CardActions>
-    </Card>
-    
-
-<Card className={classes.root}>
-<CardActionArea>
-  <CardMedia
-    className={classes.media}
-    image="https://z.nooncdn.com/products/tr:n-t_240/v1605814220/N41044065A_1.jpg"
-    title="Contemplative Reptile"
-  />
-  <CardContent>
-    <Typography gutterBottom variant="h5" component="h2">
-      U-HOOME Push Pop
-    </Typography>
-    <Typography variant="body2" color="textSecondary" component="p">
-      Bubble Fidget Sensor
-    </Typography>
-  </CardContent>
-</CardActionArea>
-<CardActions>
-  <Button size="small" color="primary">
-    AED 8.00
-  </Button>
-  <Button size="small" color="primary">
-  Arrives
-  </Button>
-</CardActions>
-</Card>
-</component>
-    
-  );
-}
 
 function App() {
   return (
@@ -145,7 +69,7 @@ function App() {
               </li>
             </ul>
             <form className="d-flex ">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <input className="form-control me-2" type="search" placeholder="What are you looking for?" aria-label="Search" size="76" />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>  
@@ -154,30 +78,15 @@ function App() {
       <div className="slide-show my-3">
         <Slideshow />
       </div>
-      <div className="container">
-        <div className="row">
+      <div className="m-3">
+        <div className="row ">
           <div className="col-6">
             <h3>Recommended for you</h3>
           </div>
         </div>
       </div>
 
-      <div className="container p-3">
-        <div className="row">
-          <div className="col-3">
-            
-              <MediaCard />
-            
-          </div>
-          <div className="col-3">
-            
-            <MediaCard />
-          
-        </div>
-
-        </div>
-      </div>
-   
+      <Product />
 
 
 
